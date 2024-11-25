@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  feedbackWidget: false,
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
       const originalEntry = config.entry as () => Promise<

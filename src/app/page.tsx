@@ -6,6 +6,7 @@ import { AboutSection } from '@/components/about-section';
 import { ServicesSection } from '@/components/services-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
+import WhatsAppFloat from '@/components/whatsapp';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

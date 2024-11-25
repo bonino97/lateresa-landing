@@ -78,8 +78,7 @@ export function ContactSection() {
             </div>
             <div className='aspect-video w-full rounded-lg overflow-hidden shadow-xl'>
               <iframe
-                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.7503503462946!2d-62.18459799999999!3d-33.282222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c8f9a4b2b20a6d%3A0x8f0c4f7d1a7c7b0a!2sC%C3%B3rdoba%20145%2C%20Corral%20de%20Bustos%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1637234567890!5m2!1
-ses!2sar'
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.106309767633!2d-62.18475644383093!3d-33.28344138042843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c9023cc2f7a6df%3A0x8a54cb71b6b97bd7!2sC%C3%B3rdoba%20145%2C%20X2645%20Corral%20de%20Bustos-Ifflinger%2C%20C%C3%B3rdoba%2C%20Argentina!5e0!3m2!1ses-419!2ses!4v1732561248404!5m2!1ses-419!2ses'
                 width='100%'
                 height='100%'
                 style={{ border: 0 }}

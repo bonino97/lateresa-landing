@@ -42,8 +42,19 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com'
       }
-    ]
+    ],
   },
+  // Deshabilitar indicadores de desarrollo
+  devIndicators: {
+    buildActivity: false,
+  },
+  // Configuraciones experimentales
+  experimental: {
+    webVitalsAttribution: ['CLS', 'LCP'],
+    instrumentationHook: false,
+  },
+  // Configuración de producción
+  productionBrowserSourceMaps: false,
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer) {
       const originalEntry = config.entry

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -53,25 +53,20 @@ export function Footer() {
             <h3 className='text-lg font-semibold mb-4'>Síguenos</h3>
             <div className='flex space-x-4'>
               <Link
-                href='#'
+                href='https://www.facebook.com/lateresa.cosasdecampo/'
+                target='_blank'
                 className='hover:text-accent transition-colors duration-300'
               >
                 <Facebook className='h-6 w-6' />
                 <span className='sr-only'>Facebook</span>
               </Link>
               <Link
-                href='#'
+                href='https://www.instagram.com/lateresa_oficial/'
+                target='_blank'
                 className='hover:text-accent transition-colors duration-300'
               >
                 <Instagram className='h-6 w-6' />
                 <span className='sr-only'>Instagram</span>
-              </Link>
-              <Link
-                href='#'
-                className='hover:text-accent transition-colors duration-300'
-              >
-                <Twitter className='h-6 w-6' />
-                <span className='sr-only'>Twitter</span>
               </Link>
             </div>
           </div>

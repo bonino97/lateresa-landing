@@ -26,7 +26,7 @@ export function AboutSection() {
               src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxfDB8MXxyYW5kb218MHx8ZmFybSUyMHdvcmtlcnxlbnwwfHx8fDE2OTk5MDYwMzd8MA&ixlib=rb-4.0.3&q=80&w=1080'
               alt='Trabajador en el campo'
               layout='fill'
-              objectFit='cover'
+              className='object-cover'
             />
           </div>
         </div>

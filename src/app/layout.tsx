@@ -4,15 +4,16 @@ import '@/app/globals.css';
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
-  variable: '--font-sans',
-  weight: '300',
+  weight: ['300', '400', '500', '700'], // Incluye todos los pesos que necesites
+  variable: '--font-ubuntu', // Cambiamos el nombre de la variable
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: 'La Teresa - Cosas de Campo',
   description: 'Soluciones integrales para el sector agropecuario',
   icons: {
-    icon: '/logo.jpg', // Para favicon
+    icon: '/logo.jpg',
   },
   openGraph: {
     images: [
@@ -32,12 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='es'>
-      <head>
-        <link rel='icon' href='/logo.jpg' />
-        <link rel='apple-touch-icon' href='/logo.jpg' />
-      </head>
-      <body className={`${ubuntu.variable} font-sans`}>{children}</body>
+    <html lang='es' suppressHydrationWarning>
+      <body className={`${ubuntu.variable} font-ubuntu antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,37 +5,87 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Clock, MapPin, Phone } from 'lucide-react';
+import { useState } from 'react';
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const mailtoLink = `mailto:lateresacosasdecampo@gmail.com?subject=Nuevo mensaje de contacto de ${formData.name}&body=Nombre: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ATeléfono: ${formData.phone}%0D%0AMensaje: ${formData.message}`;
+
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
-    <section id='contacto' className='py-20 bg-background'>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-4xl font-bold text-center text-primary mb-12 animate-fade-in'>
-          Conecta con Nosotros
-        </h2>
-        <div className='grid lg:grid-cols-2 gap-12'>
-          <Card className='shadow-xl animate-slide-up'>
+    <section className='py-16 px-4 md:px-6 bg-background' id='contacto'>
+      <div className='max-w-7xl mx-auto'>
+        <div className='text-center mb-12'>
+          <h2 className='text-3xl font-bold text-primary mb-4'>
+            Conecta con Nosotros
+          </h2>
+        </div>
+
+        <div className='grid md:grid-cols-2 gap-8'>
+          <Card className='animate-slide-up'>
             <CardHeader>
-              <CardTitle className='text-2xl text-primary'>
-                Envíanos un Mensaje
-              </CardTitle>
+              <CardTitle>Envíanos un Mensaje</CardTitle>
             </CardHeader>
             <CardContent>
-              <form className='space-y-4'>
-                <div>
-                  <Input placeholder='Nombre' className='bg-background/50' />
-                </div>
-                <div>
+              <form onSubmit={handleSubmit} className='space-y-4'>
+                <div className='space-y-2'>
                   <Input
-                    type='email'
-                    placeholder='Correo electrónico'
-                    className='bg-background/50'
+                    name='name'
+                    placeholder='Nombre completo'
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
-                <div>
+                <div className='space-y-2'>
+                  <Input
+                    name='email'
+                    type='email'
+                    placeholder='Email'
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className='space-y-2'>
+                  <Input
+                    name='phone'
+                    type='tel'
+                    placeholder='Teléfono'
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className='space-y-2'>
                   <Textarea
-                    placeholder='Mensaje'
-                    className='min-h-[120px] bg-background/50'
+                    name='message'
+                    placeholder='Tu mensaje'
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className='min-h-[120px]'
                   />
                 </div>
                 <Button
@@ -47,6 +97,7 @@ export function ContactSection() {
               </form>
             </CardContent>
           </Card>
+
           <div
             className='space-y-8 animate-slide-up'
             style={{ animationDelay: '200ms' }}

@@ -12,9 +12,8 @@ export function HeroSection() {
         src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxfDB8MXxyYW5kb218MHx8ZmFybXxlbnwwfHx8fDE2OTk5MDU5Mjd8MA&ixlib=rb-4.0.3&q=80&w=1080'
         alt='Campo al atardecer'
         layout='fill'
-        objectFit='cover'
         quality={100}
-        className='z-0'
+        className='z-0 object-cover'
       />
       <div className='absolute inset-0 bg-primary/40 z-10' />
       <div className='container relative z-20 px-4 py-32 flex flex-col items-center text-center'>
